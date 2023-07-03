@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Input } from "antd";
+import { Col, Form, Input, Row } from "antd";
+import "../globals.css";
 
 export const EditForm = ({ name, email, phone, website }) => {
   const onFinish = (values) => {
@@ -20,10 +21,6 @@ export const EditForm = ({ name, email, phone, website }) => {
         wrapperCol={{
           span: 16,
         }}
-        style={{
-          maxWidth: 600,
-          padding: 50,
-        }}
         initialValues={{
           name: name,
           email: email,
@@ -34,57 +31,68 @@ export const EditForm = ({ name, email, phone, website }) => {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
-        <Form.Item
-          label="Name"
-          name="name"
-          rules={[
-            {
-              required: true,
-              message: "Please input your name!",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
+      <br />
+        <Row>
+        <Col  xs={{ span: 22, offset: 1 }} lg={{ span: 20, offset: 1 }}>
+          <Form.Item
+            label="Name"
+            name="name"
+            rules={[
+              {
+                required: true,
+                message: "Please input your name!",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          </Col>
 
-        <Form.Item
-          label="Email"
-          name="email"
-          rules={[
-            {
-              required: true,
-              message: "Please input your name!",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
+          <Col  xs={{ span: 22, offset: 1 }} lg={{ span: 20, offset: 1 }}>
+          <Form.Item
+            label="Email"
+            name="email"
+            rules={[
+              {
+                required: true,
+                message: "Please input your name!",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          </Col>
 
-        <Form.Item
-          label="Phone"
-          name="phone"
-          rules={[
-            {
-              required: true,
-              message: "Please input your name!",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
+          <Col  xs={{ span: 22, offset: 1 }} lg={{ span: 20, offset: 1 }}>
+          <Form.Item
+            label="Phone"
+            name="phone"
+            rules={[
+              {
+                required: true,
+                message: "Please input your name!",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          </Col>
 
-        <Form.Item
-          label="Website"
-          name="website"
-          rules={[
-            {
-              required: true,
-              message: "Please input your name!",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
+          <Col  xs={{ span: 22, offset: 1 }} lg={{ span: 20, offset: 1 }}>
+          <Form.Item
+            label="Website"
+            name="website"
+            rules={[
+              {
+                required: true,
+                message: "Please input your name!",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          </Col>
+        </Row>
       </Form>
     </div>
   );
